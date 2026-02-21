@@ -1,0 +1,37 @@
+name: Reloj Automatico
+
+# 1 ¿Cuando ejecutarlo?
+on:
+  schedule:
+    - cron: '0 5 * * *' # A las 05:00 AM UTC Medianoche exacta en Lima
+  workflow_dispatch: # Esto es para probarlo a cualquier hora
+
+jobs:
+  actualizar-pagina:
+    runs-on: ubuntu-latest
+
+    # Permisos
+    permissions:
+      contents: write
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Ejecutar script
+        run: python actualizar_fecha.py
+      - name: Guardar los cambios (Commit y Push)
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add index.html
+          git diff --quiet && git diff -staged --quiet || git commit -m "Actualizar fecha y frase del dia"
+          git push
+
+
+
+
+
