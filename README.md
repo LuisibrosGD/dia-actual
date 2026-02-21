@@ -1,2 +1,2 @@
 # dia-actual
-Muestra el dia actual y la hora en que se actualizó
+Muestra el dia actual y una frase de lo que se celebra.
