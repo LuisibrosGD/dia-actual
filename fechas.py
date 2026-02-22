@@ -1,3 +1,9 @@
+"""
+Módulo de Datos Estáticos
+-------------------------
+Contiene las estructuras de datos (diccionarios y listas) que almacenan 
+las efemérides diarias, así como las traducciones de meses y días al español.
+"""
 dias_espaniol = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 meses_espaniol = {
     "01": "Enero",

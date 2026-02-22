@@ -1,3 +1,12 @@
+"""
+Script de Automatización Diaria
+-------------------------------
+Calcula la fecha actual en la zona horaria de Lima (UTC-5), busca una 
+efeméride correspondiente en el diccionario local y genera un nuevo 
+archivo 'index.html' a partir de 'plantilla.html'.
+
+Diseñado para ser ejecutado diariamente mediante GitHub Actions.
+"""
 from datetime import datetime, timezone, timedelta
 from fechas import efemerides, dias_espaniol, meses_espaniol
 zona_horaria_lima = timezone(timedelta(hours=-5))
