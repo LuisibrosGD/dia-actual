@@ -31,7 +31,7 @@ else:
     frase_hoy = "No hay frase hoy dia (ya que estoy cansado :c)"
 
 # Leemos el index.html y lo guardamos en una variable
-with open('index.html', 'r', encoding='utf-8') as archivo:
+with open('plantilla.html', 'r', encoding='utf-8') as archivo:
     contenido_html = archivo.read()
 
 contenido_html = contenido_html.replace('{{FECHA_HOY}}', fecha_hoy)
